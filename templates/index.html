@@ -1,0 +1,47 @@
+<!-- templates/index.html -->
+<!-- templates/index.html -->
+{% extends 'layout.html' %}
+
+{% block title %}Home - Lushra Makhana Store{% endblock %}
+
+{% block content %}
+
+
+    <section class="hero">
+        <h2>Welcome to Lushra Makhana!</h2>
+        <p>Discover a world of premium-quality makhana products.</p>
+        <a href="{{ url_for('shop') }}" class="cta-button">Shop Now</a>
+    </section>
+
+    
+
+       
+
+    <section class="featured-products">
+        <h3>Featured Products</h3>
+        <!-- Add featured product cards or showcase here -->
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='1.jpg') }}" alt="Product 1">
+            <h4>Product 1</h4>
+            <p>Description of Product 1.</p>
+            <span class="price">$19.99</span>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Add more product cards as needed -->
+    </section>
+
+    <section class="testimonials">
+        <h3>What Our Customers Say</h3>
+        <!-- Add customer testimonials or reviews here -->
+        <div class="testimonial">
+            <p>"Great quality makhana and excellent service! Highly recommended."</p>
+            <span class="customer-name">Amit Tandon</span>
+        </div>
+
+        <!-- Add more testimonials as needed -->
+    </section>
+
+    
+
+{% endblock %}

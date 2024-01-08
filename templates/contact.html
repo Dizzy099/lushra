@@ -1,0 +1,55 @@
+<!-- templates/contact.html -->
+{% extends 'layout.html' %}
+
+{% block title %}Contact Us - Lushra Makhana Store{% endblock %}
+
+{% block content %}
+    <h2>Contact Us</h2>
+    <p>Feel free to reach out to us using the form below or through our contact information.</p>
+
+        <!-- Display form validation errors -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+    <!-- Contact Form -->
+    <form action="{{ url_for('contact') }}" method="post">
+        {{ form.hidden_tag() }}
+
+        <label for="name">Your Name:</label>
+        {{ form.name(class="form-control", placeholder="Your Name") }}
+        {% if form.name.errors %}
+            <span class="text-danger">{{ form.name.errors[0] }}</span>
+        {% endif %}
+
+        <label for="email">Your Email:</label>
+        {{ form.email(class="form-control", placeholder="Your Email") }}
+        {% if form.email.errors %}
+            <span class="text-danger">{{ form.email.errors[0] }}</span>
+        {% endif %}
+
+        <label for="message">Your Message:</label>
+        {{ form.message(class="form-control", placeholder="Your Message") }}
+        {% if form.message.errors %}
+            <span class="text-danger">{{ form.message.errors[0] }}</span>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <h3>Our Contact Information</h3>
+        <p>Email: admin@tradetreex.com</p>
+        <p>Phone: +91 6396576830</p>
+        <p>Address: B-35 , Vishwakarma Colony Pul Pehladpur, New Delhi, 110044</p>
+    </div>
+{% endblock %}

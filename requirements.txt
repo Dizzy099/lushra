@@ -1,0 +1,7 @@
+Flask==2.0.2
+Flask-WTF==0.15.1  # If you're using Flask-WTF for forms
+Gunicorn==21.2.0  # The WSGI server for running Flask in production
+
+
+
+

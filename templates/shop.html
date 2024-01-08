@@ -1,0 +1,30 @@
+<!-- templates/shop.html -->
+{% extends 'layout.html' %}
+
+{% block title %}Shop - Lushra Makhana{% endblock %}
+
+{% block content %}
+    <h2>Shop Our Products</h2>
+
+    <div class="product-list">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='1.jpg') }}" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Description of Product 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <span class="price">$19.99</span>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='2.jpg') }}" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Description of Product 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <span class="price">$24.99</span>
+            <button>Add to Cart</button>
+        </div>
+
+        <!-- Add more product cards as needed -->
+    </div>
+{% endblock %}
