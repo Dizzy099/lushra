@@ -53,6 +53,4 @@ def send_email(name, email, message):
     # Send the email
     mail.send(msg)
 
-         
-if __name__ == '__main__':
-    app.run(debug=True)
+
